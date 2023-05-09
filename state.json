@@ -1,0 +1,95 @@
+{
+  "cookies": [
+    {
+      "name": "_ga",
+      "value": "GA1.2.791258052.1683573575",
+      "domain": ".mixtelematics.com",
+      "path": "/",
+      "expires": 1718133575.325275,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gid",
+      "value": "GA1.2.1240053271.1683573575",
+      "domain": ".mixtelematics.com",
+      "path": "/",
+      "expires": 1683659975,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gat",
+      "value": "1",
+      "domain": ".mixtelematics.com",
+      "path": "/",
+      "expires": 1683573635,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "selectionCriteria.BaseApp.GlobalSelectionCriteria",
+      "value": "%7B%22lastUserLanguageCookie%22%3A%22en_gb%22%7D",
+      "domain": "integration.mixtelematics.com",
+      "path": "/",
+      "expires": 1715109577,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBCORS",
+      "value": "0Uz59GsyQkPidFW0v41yxoMDSapT7NAmXR2CzPPVmHICC6QJGIZPEyN18YtGNN6DAZ1TFD3GRUoqZovwWSOh4Z79I1/AN11I4jio5NppKvmrjVA00igyu/Lv01eX",
+      "domain": "operationsapi.mixdevelopment.com",
+      "path": "/",
+      "expires": 1684178377.521973,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "token",
+      "value": "bf05165a-ad28-44fb-ae8b-3e889ae788ff",
+      "domain": "integration.mixtelematics.com",
+      "path": "/",
+      "expires": 1683577182.429253,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Strict"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://integration.mixtelematics.com",
+      "localStorage": [
+        {
+          "name": "ZD-settings",
+          "value": "[[\"ab60a1df554cd261c61a67de389b334e274e5c64\",1683573578]]"
+        },
+        {
+          "name": "ZD-suid",
+          "value": "{\"id\":\"68b7661daec5476085ea82f274804795\",\"expiry\":1683574478745,\"tabs\":{\"count\":1,\"expiry\":0}}"
+        },
+        {
+          "name": "Timeline.TimelineSelectionCriteria.viewDate",
+          "value": "null"
+        },
+        {
+          "name": "ZD-buid",
+          "value": "bcf76390d19741608d13a9e195370a38"
+        },
+        {
+          "name": "ZD-store",
+          "value": "{\"activeEmbed\":\"helpCenterForm\",\"widgetShown\":false,\"is_chatting\":false}"
+        },
+        {
+          "name": "ZD-zE_oauth",
+          "value": "{\"id\":\"3aee40cc3f21d1ed342c04e22844f3afd3cb27ae\",\"token\":\"e1d927fd8a4bc39e4eb73cc2434b204338704bd3e84aa118b7268882fa785a06\",\"expiry\":1683580779,\"createdAt\":1683573579,\"webToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhbmRvbiBPbGNrZXJzIiwiZW1haWwiOiJicmFuZG9uLm9sY2tlcnNAbWl4dGVsZW1hdGljcy5jb20iLCJpYXQiOiIxNjgzNTczNTc4IiwianRpIjoiMTM5MjM2OTk2MzE0NTc4OTQ0MCIsImV4cCI6MTY4MzU4MDc3OH0.z0Y-um13JIdd_fqjfte5c_YVK9lLIuTHlb97q4SIY-Y\"}"
+        }
+      ]
+    }
+  ]
+}
