@@ -8,7 +8,7 @@ test("Elements", async ({page}) => {
 })
 
 test("Text Box", async ({page}) => {
-
+    await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto('https://demoqa.com/elements');
     //The $$ methond finds the elements matching and then is stored in a variable using [...listItems]
     const listItems = await page.$$('.left-pannel .accordion .element-group ul li');
