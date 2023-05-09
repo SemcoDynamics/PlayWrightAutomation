@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "playwright test --window-size=1920,1080"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
