@@ -5,6 +5,10 @@ const { devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 const config = {
+  viewport: {
+    width: 1920,
+    height: 1080
+  },
   testDir: './tests',
   // Maximum time one test can run for. */
   timeout: 60 * 1000,
