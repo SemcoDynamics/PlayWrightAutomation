@@ -74,9 +74,8 @@ test.only('Radio buttons', async ({page}) => {
 
     await radioselector.nth(0).click();
     console.log(await successMsg.innerText());
-    await expect(successMsg.innerText === "You have selected Yes");
+    expect(await successMsg.innerText() === "You have selected NO ");
     await radioselector.nth(1).click();
     console.log(await successMsg.innerText());
-    //await expect(radioselector.nth(2)).isDisabled();
     console.log('No radio button is disabled',await noRadio.isDisabled());
 })
