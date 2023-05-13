@@ -34,7 +34,7 @@ test("Text Box", async ({page}) => {
     console.log(await page.locator('#output .border p').allTextContents());
 });
 
-test.only('Check Boxes', async ({page}) => {
+test('Check Boxes', async ({page}) => {
 
     await page.goto('https://demoqa.com/checkbox');
 
@@ -53,8 +53,30 @@ test.only('Check Boxes', async ({page}) => {
     await page.locator('.check-box-tree-wrapper li button').nth(2).click();
     await page.waitForLoadState('networkidle');
     await page.locator('.check-box-tree-wrapper li label .rct-checkbox').nth(4).uncheck();
+    await page.locator('.check-box-tree-wrapper li button').nth(3).click();
+    await page.locator('.check-box-tree-wrapper li label .rct-checkbox').nth(4).uncheck();
+    await page.locator('.check-box-tree-wrapper li label .rct-checkbox').nth(5).uncheck();
+    await expect(page.locator('.check-box-tree-wrapper li label .rct-checkbox').nth(6)).toBeChecked();
+    console.log('VA checkbox is checked: ', await page.locator('.check-box-tree-wrapper li label .rct-checkbox').nth(6).isChecked())
+
     await expect(page.locator('#result')).toBeVisible();
     const text = await page.locator('#result').innerText();
     console.log(text);
 
 });
+
+test.only('Radio buttons', async ({page}) => {
+
+    await page.goto('https://demoqa.com/radio-button');
+    const radioselector = page.locator('div.custom-control.custom-radio.custom-control-inline');
+    const successMsg = page.locator('p.mt-3');
+    const noRadio = page.locator('div.custom-control.custom-radio.custom-control-inline #noRadio')
+
+    await radioselector.nth(0).click();
+    console.log(await successMsg.innerText());
+    await expect(successMsg.innerText === "You have selected Yes");
+    await radioselector.nth(1).click();
+    console.log(await successMsg.innerText());
+    //await expect(radioselector.nth(2)).isDisabled();
+    console.log('No radio button is disabled',await noRadio.isDisabled());
+})
