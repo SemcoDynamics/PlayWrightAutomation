@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 const {LoginPage} = require('../pageobjects/LoginPage');
 
-test('Login and view Adidas Orignal shoe', async ({page})=> 
+test.only('Login and view Adidas Orignal shoe', async ({page})=> 
 {
     const userName1 = page.locator('#userEmail');
     const passWord1 = page.locator('#userPassword');
@@ -12,7 +12,7 @@ test('Login and view Adidas Orignal shoe', async ({page})=>
     const title = page.locator('.card-body b');
     const viewBtn = page.locator('button.btn.w-40.rounded i');
     const viewShoePrice = page.locator('.col-lg-6.rtl-text h3');
-    //pageobject
+    //pageobject //Credentials
     const loginPage = new LoginPage(page);
     loginPage.goTo();
     loginPage.validLogin(email,loginPass)
@@ -20,9 +20,6 @@ test('Login and view Adidas Orignal shoe', async ({page})=>
     //get title - assertion
     console.log(await page.title());
     await expect(page).toHaveTitle("Let's Shop");
-
-    //Credentials
-   
 
     //Prints Product description to Terminal
     await page.waitForLoadState('networkidle');
@@ -34,7 +31,7 @@ test('Login and view Adidas Orignal shoe', async ({page})=>
     console.log(await viewShoePrice.textContent());
 }); 
 
-test.only("End to End testing", async ({page})=> {
+test("End to End testing", async ({page})=> {
     //js file-login js, Dashboards
     const productName = 'zara coat 3';
     //List all products in this locator
