@@ -156,5 +156,5 @@ test.only("End to End testing", async ({page})=> {
     }
     await page.waitForLoadState('networkidle')
     const orderIdDetails = page.locator(".col-text").textContent();
-    expect(orderId.includes(orderIdDetails)).toBeTruthy;
+    expect(orderId.includes(orderIdDetails)).toBeTruthy();
   })
