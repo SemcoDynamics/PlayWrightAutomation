@@ -1,5 +1,5 @@
 const {test, expect} = require('@playwright/test');
-const {LoginPage} = require("..pageobjects/LoginPage");
+const {LoginPage} = require("..pageobjects/LoginPage.js");
 
 test('Login and view Adidas Orignal shoe', async ({page})=> 
 {
