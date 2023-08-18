@@ -1,8 +1,8 @@
 const {test, expect} = require('@playwright/test');
-
+const {LoginPage} = require("..pageobjects/LoginPage");
 
 test('Login and view Adidas Orignal shoe', async ({page})=> 
-{//js file- Login js, DashboardPage
+{
     const userName1 = page.locator('#userEmail');
     const passWord1 = page.locator('#userPassword');
     const submit1 = page.locator("input[id='login']")
@@ -12,16 +12,17 @@ test('Login and view Adidas Orignal shoe', async ({page})=>
     const title = page.locator('.card-body b');
     const viewBtn = page.locator('button.btn.w-40.rounded i');
     const viewShoePrice = page.locator('.col-lg-6.rtl-text h3');
+    //pageobject
+    const loginPage = new LoginPage(page);
+    loginPage.goTo()
+    loginPage.validLogin(email,loginPass)
 
-    await page.goto("https://rahulshettyacademy.com/client/");
     //get title - assertion
     console.log(await page.title());
     await expect(page).toHaveTitle("Let's Shop");
 
     //Credentials
-    await userName1.type(email);
-    await passWord1.type(loginPass);
-    await submit1.click();
+   
 
     //Prints Product description to Terminal
     await page.waitForLoadState('networkidle');
