@@ -14,7 +14,7 @@ test('Login and view Adidas Orignal shoe', async ({page})=>
     const viewShoePrice = page.locator('.col-lg-6.rtl-text h3');
     //pageobject
     const loginPage = new LoginPage(page);
-    loginPage.goTo()
+    loginPage.goTo();
     loginPage.validLogin(email,loginPass)
 
     //get title - assertion
