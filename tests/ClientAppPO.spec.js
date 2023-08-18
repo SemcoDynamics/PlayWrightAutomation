@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 const {LoginPage} = require('../pageobjects/LoginPage');
 
-test.only('Login and view Adidas Orignal shoe', async ({page})=> 
+test('Login and view Adidas Orignal shoe', async ({page})=> 
 {
     const userName1 = page.locator('#userEmail');
     const passWord1 = page.locator('#userPassword');
@@ -13,9 +13,7 @@ test.only('Login and view Adidas Orignal shoe', async ({page})=>
     const viewBtn = page.locator('button.btn.w-40.rounded i');
     const viewShoePrice = page.locator('.col-lg-6.rtl-text h3');
     //pageobject //Credentials
-    const loginPage = new LoginPage(page);
-    loginPage.goTo();
-    loginPage.validLogin(email,loginPass)
+    
 
     //get title - assertion
     console.log(await page.title());
@@ -37,7 +35,7 @@ test("End to End testing", async ({page})=> {
     //List all products in this locator
     const products = page.locator(".card-body");
 
-    await page.goto("https://rahulshettyacademy.com/client/");
+    //await page.goto("https://rahulshettyacademy.com/client/");
     const userName1 = page.locator('#userEmail');
     const passWord1 = page.locator('#userPassword');
     const submit1 = page.locator("input[id='login']")
@@ -45,9 +43,12 @@ test("End to End testing", async ({page})=> {
     const loginPass = 'P@ssword123!';
 
     //Sign in process
-    await userName1.fill(email);
+    const loginPage = new LoginPage(page);
+    loginPage.goTo();
+    loginPage.validLogin(email,loginPass)
+    /*await userName1.fill(email);
     await passWord1.fill(loginPass);
-    await submit1.click();
+    await submit1.click();*/
     await page.waitForLoadState('networkidle');
 
     //product page
