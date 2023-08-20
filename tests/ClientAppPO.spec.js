@@ -29,7 +29,7 @@ test('Login and view Adidas Orignal shoe', async ({page})=>
     console.log(await viewShoePrice.textContent());
 }); 
 
-test("End to End testing", async ({page})=> {
+test.only("End to End testing", async ({page})=> {
     //js file-login js, Dashboards
     const productName = 'zara coat 3';
     //List all products in this locator
@@ -45,7 +45,7 @@ test("End to End testing", async ({page})=> {
     //Sign in process
     const loginPage = new LoginPage(page);
     loginPage.goTo();
-    loginPage.validLogin(email,loginPass)
+    loginPage.validLogin(email, loginPass)
     /*await userName1.fill(email);
     await passWord1.fill(loginPass);
     await submit1.click();*/
