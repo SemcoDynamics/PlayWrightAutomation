@@ -1,13 +1,14 @@
-class DashboardPage
-{
+class DashboardPage {
+
     constructor(page)
-    {
+    {   
+        this.page = page;
         this.products = page.locator(".card-body");
         this.productsText = page.locator('.card-body b');
         this.cart = page.locator("[routerlink*=''cart]");
     }
-//Creating custom methods
-   async searchProduct(productName)
+    //Creating custom methods
+    async searchProduct(productName)
     {
     const titles = await this.productsText.allTextContents();
     console.log(titles);
@@ -29,4 +30,4 @@ class DashboardPage
         await this.cart.click()
     }
 }
-module.exports = {DashboardPage}
+module.exports = {DashboardPage};
