@@ -2,7 +2,6 @@ const {test, expect} = require('@playwright/test');
 const {LoginPage} = require('../pageobjects/LoginPage');
 const {DashboardPage} = require('../pageobjects/DashboardPage');
 
-
 test('Login and view Adidas Orignal shoe', async ({page})=> 
 {
     const userName1 = page.locator('#userEmail');
@@ -46,16 +45,16 @@ test.only("End to End testing", async ({page})=> {
 
     //Sign in process
     const loginPage = new LoginPage(page);
-    loginPage.goTo();
-    loginPage.validLogin(email, loginPass)
+    await loginPage.goTo();
+    await loginPage.validLogin(email, loginPass)
     /*await userName1.fill(email);
     await passWord1.fill(loginPass);
     await submit1.click();*/
     await page.waitForLoadState('networkidle');
 
-    const DashboardPage = new DashboardPage(page);
-    DashboardPage.searchProduct(productName);
-    DashboardPage
+    const dashboardPage = new DashboardPage(page);
+    await dashboardPage.searchProductAddCart(productName);
+    await dashboardPage.navigateToCart();
     //product page
     /*const titles = await page.locator('.card-body b').allTextContents();
     console.log(titles);
