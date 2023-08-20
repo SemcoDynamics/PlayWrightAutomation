@@ -9,7 +9,7 @@ class LoginPage {
     }
     async goTo()
     {
-        this.page.goTo("https://rahulshettyacademy.com/client/");
+        await this.page.goTo("https://rahulshettyacademy.com/client/");
     }
     //creating a method validLogin()
     async validLogin(email,loginPass)
