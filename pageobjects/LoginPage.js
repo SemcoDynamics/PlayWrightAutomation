@@ -1,4 +1,5 @@
 class LoginPage {
+    page = Page;
 
     constructor(page)
     {
@@ -9,7 +10,7 @@ class LoginPage {
     }
     async goTo()
     {
-        await this.page.goTo("https://rahulshettyacademy.com/client/");
+        await this.page.goTo("https://rahulshettyacademy.com/client/auth/login");
     }
     //creating a method validLogin()
     async validLogin(email,loginPass)
