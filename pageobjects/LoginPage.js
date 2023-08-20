@@ -1,5 +1,4 @@
 class LoginPage {
-    page = Page;
 
     constructor(page)
     {
