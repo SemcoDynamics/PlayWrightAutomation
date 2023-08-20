@@ -52,9 +52,9 @@ test.only("End to End testing", async ({page})=> {
     await submit1.click();*/
     await page.waitForLoadState('networkidle');
 
-    const dashboardPage = new DashboardPage(page);
-    await dashboardPage.searchProductAddCart(productName);
-    await dashboardPage.navigateToCart();
+    const DashboardPage = new DashboardPage(page);
+    DashboardPage.searchProduct(productName);
+    DashboardPage
     //product page
     /*const titles = await page.locator('.card-body b').allTextContents();
     console.log(titles);
