@@ -1,5 +1,7 @@
 const {test, expect} = require('@playwright/test');
 const {LoginPage} = require('../pageobjects/LoginPage');
+const {DashboardPage} = require('../pageobjects/DashboardPage');
+
 
 test('Login and view Adidas Orignal shoe', async ({page})=> 
 {
@@ -50,8 +52,12 @@ test.only("End to End testing", async ({page})=> {
     await passWord1.fill(loginPass);
     await submit1.click();*/
     await page.waitForLoadState('networkidle');
+
+    const DashboardPage = new DashboardPage(page);
+    DashboardPage.searchProduct(productName);
+    DashboardPage
     //product page
-    const titles = await page.locator('.card-body b').allTextContents();
+    /*const titles = await page.locator('.card-body b').allTextContents();
     console.log(titles);
     await page.waitForLoadState('networkidle');
 
@@ -66,9 +72,9 @@ test.only("End to End testing", async ({page})=> {
         console.log("Add To Cart: Clicked")
         break;
         }
-    }
+    }*/
     
-    const cartBtn = '[routerlink="/dashboard/cart"]'
+    //const cartBtn = '[routerlink="/dashboard/cart"]'
     await page.locator(cartBtn).click();
     await page.locator("div li").first().waitFor()
 

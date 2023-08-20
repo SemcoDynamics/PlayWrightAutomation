@@ -7,5 +7,26 @@ class DashboardPage
         this.cart = page.locator("[routerlink*=''cart]");
     }
 //Creating custom methods
-    searchProduct(productName)
+   async searchProduct(productName)
+    {
+    const titles = await this.productsText.allTextContents();
+    console.log(titles);
+    const count = await this.products.count();
+    for(let i = 0; i < count; ++i)
+    {
+    if(await this.products.nth(i).locator("b").textContent() === productName)  
+    console.log("Displays Product name equal to i: ", await products.nth(i).locator("b").textContent())
+    {
+        //add to cart
+        await this.products.nth(i).locator("text= Add To Cart").click();
+        console.log("Add To Cart: Clicked")
+        break;
+        }
+    }
+    }
+    async navigateToCart()
+    {
+        await this.cart.click()
+    }
 }
+module.exports = {DashboardPage}
