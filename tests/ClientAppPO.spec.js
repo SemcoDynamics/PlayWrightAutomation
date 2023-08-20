@@ -49,7 +49,6 @@ test.only("End to End testing", async ({page})=> {
     /*await userName1.fill(email);
     await passWord1.fill(loginPass);
     await submit1.click();*/
-    await page.waitForLoadState('networkidle');
 
     //product page
     const titles = await page.locator('.card-body b').allTextContents();

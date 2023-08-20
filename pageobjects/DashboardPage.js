@@ -7,5 +7,5 @@ class DashboardPage
         this.cart = page.locator("[routerlink*=''cart]");
     }
 //Creating custom methods
-
+    searchProduct(productName)
 }
