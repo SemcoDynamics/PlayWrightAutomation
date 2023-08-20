@@ -53,7 +53,7 @@ test.only("End to End testing", async ({page})=> {
     await page.waitForLoadState('networkidle');
 
     const dashboardPage = new DashboardPage(page);
-    dashboardPage.searchProduct(productName);
+    dashboardPage.searchProductAddCart(productName);
     dashboardPage.navigateToCart()
     //product page
     /*const titles = await page.locator('.card-body b').allTextContents();

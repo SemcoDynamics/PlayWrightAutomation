@@ -6,7 +6,7 @@ class DashboardPage
         this.productText = page.locator('.card-body b');
         this.cart = page.locator('[routerlink="/dashboard/cart"]');
     }
-    async searchProduct(productName)
+    async searchProductAddCart(productName)
     {
     const titles = await this.products.allTextContents();
     console.log(titles);
