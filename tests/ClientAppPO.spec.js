@@ -50,7 +50,7 @@ test.only("End to End testing", async ({page})=> {
     /*await userName1.fill(email);
     await passWord1.fill(loginPass);
     await submit1.click();*/
-    await page.waitForLoadState('networkidle');
+    //await page.waitForLoadState('networkidle');
 
     const dashboardPage = new DashboardPage1(page);
     await dashboardPage.searchProductAddCart(productName);
