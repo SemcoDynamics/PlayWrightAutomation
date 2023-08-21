@@ -1,4 +1,4 @@
-class DashboardPage
+class DashboardPage1
 {
     constructor(page)
     {
@@ -31,4 +31,4 @@ class DashboardPage
         await this.cart.click();
     }
 }
-module.exports = {DashboardPage};
+module.exports = {DashboardPage1};
