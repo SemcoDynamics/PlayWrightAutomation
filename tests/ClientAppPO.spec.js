@@ -47,31 +47,10 @@ test.only("End to End testing", async ({page})=> {
     const loginPage = new LoginPage(page);
     await loginPage.goTo();
     await loginPage.validLogin(email, loginPass)
-    /*await userName1.fill(email);
-    await passWord1.fill(loginPass);
-    await submit1.click();*/
-    //await page.waitForLoadState('networkidle');
-
+    //Dashboard search product and add it to cart
     const dashboardPage = new DashboardPage1(page);
     await dashboardPage.searchProductAddCart(productName);
     await dashboardPage.navigateToCart();
-    //product page
-    /*const titles = await page.locator('.card-body b').allTextContents();
-    console.log(titles);
-    await page.waitForLoadState('networkidle');
-
-    const count = await products.count();
-    for(let i = 0; i < count; ++i)
-    {
-    if(await products.nth(i).locator("b").textContent() === productName)  
-    console.log("Displays Product name equal to i: ", await products.nth(i).locator("b").textContent())
-    {
-        //add to cart
-        await products.nth(i).locator("text= Add To Cart").click();
-        console.log("Add To Cart: Clicked")
-        break;
-        }
-    }*/
     
     const cartBtn = '[routerlink="/dashboard/cart"]'
     await page.locator(cartBtn).click();
