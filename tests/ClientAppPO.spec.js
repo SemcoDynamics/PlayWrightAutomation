@@ -37,9 +37,6 @@ test.only("End to End testing", async ({page})=> {
     const products = page.locator(".card-body");
 
     //await page.goto("https://rahulshettyacademy.com/client/");
-    const userName1 = page.locator('#userEmail');
-    const passWord1 = page.locator('#userPassword');
-    const submit1 = page.locator("input[id='login']")
     const email = 'semcodynamic@gmail.com';
     const loginPass = 'P@ssword123!';
 
