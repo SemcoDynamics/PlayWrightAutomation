@@ -73,7 +73,7 @@ test.only("End to End testing", async ({page})=> {
         }
     }*/
     
-    //const cartBtn = '[routerlink="/dashboard/cart"]'
+    const cartBtn = '[routerlink="/dashboard/cart"]'
     await page.locator(cartBtn).click();
     await page.locator("div li").first().waitFor()
 
