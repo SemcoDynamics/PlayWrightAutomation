@@ -1,5 +1,4 @@
-class DashboardPage1
-{
+class DashboardPage1 {
     constructor(page)
     {
         this.products = page.locator(".card-body");
