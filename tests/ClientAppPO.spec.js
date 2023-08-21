@@ -1,94 +1,39 @@
 const {test, expect} = require('@playwright/test');
-const {LoginPage} = require('../pageobjects/LoginPage');
-const {DashboardPage1} = require('../pageobjects/DashboardPage1');
+const {POManager} = require('../pageobjects/POManager');
 
-test('Login and view Adidas Orignal shoe', async ({page})=> 
+test.only("End to End testing", async ({page})=> 
 {
-    const userName1 = page.locator('#userEmail');
-    const passWord1 = page.locator('#userPassword');
-    const submit1 = page.locator("input[id='login']")
-    const email = 'semcodynamic@gmail.com';
-    const loginPass = 'P@ssword123!';
-
-    const title = page.locator('.card-body b');
-    const viewBtn = page.locator('button.btn.w-40.rounded i');
-    const viewShoePrice = page.locator('.col-lg-6.rtl-text h3');
-    //pageobject //Credentials
-    
-
-    //get title - assertion
-    console.log(await page.title());
-    await expect(page).toHaveTitle("Let's Shop");
-
-    //Prints Product description to Terminal
-    await page.waitForLoadState('networkidle');
-    console.log(await title.allTextContents());
-
-    //Select and view Addidas Orignal product
-    
-    await viewBtn.nth(1).click();
-    console.log(await viewShoePrice.textContent());
-}); 
-
-test.only("End to End testing", async ({page})=> {
+    const poManager = new POManager(page);
     //js file-login js, Dashboards
     const productName = 'zara coat 3';
     //List all products in this locator
     const products = page.locator(".card-body");
 
     //await page.goto("https://rahulshettyacademy.com/client/");
-    const userName1 = page.locator('#userEmail');
-    const passWord1 = page.locator('#userPassword');
-    const submit1 = page.locator("input[id='login']")
     const email = 'semcodynamic@gmail.com';
     const loginPass = 'P@ssword123!';
 
     //Sign in process
-    const loginPage = new LoginPage(page);
+    const loginPage = poManager.getLoginPage();
     await loginPage.goTo();
     await loginPage.validLogin(email, loginPass)
-    /*await userName1.fill(email);
-    await passWord1.fill(loginPass);
-    await submit1.click();*/
-    //await page.waitForLoadState('networkidle');
-
-    const dashboardPage = new DashboardPage1(page);
+    //Dashboard search product and add it to cart
+    const dashboardPage = poManager.getDashboardPage();
     await dashboardPage.searchProductAddCart(productName);
     await dashboardPage.navigateToCart();
-    //product page
-    /*const titles = await page.locator('.card-body b').allTextContents();
-    console.log(titles);
-    await page.waitForLoadState('networkidle');
+    //My Cart page
+    const myCartCheckout = poManager.getMyCartPage();
+    await myCartCheckout.waitForMyCart();
+    await myCartCheckout.clickCheckout();
 
-    const count = await products.count();
-    for(let i = 0; i < count; ++i)
-    {
-    if(await products.nth(i).locator("b").textContent() === productName)  
-    console.log("Displays Product name equal to i: ", await products.nth(i).locator("b").textContent())
-    {
-        //add to cart
-        await products.nth(i).locator("text= Add To Cart").click();
-        console.log("Add To Cart: Clicked")
-        break;
-        }
-    }*/
-    
-    //const cartBtn = '[routerlink="/dashboard/cart"]'
-    await page.locator(cartBtn).click();
-    await page.locator("div li").first().waitFor()
 
-    const cartItemTitle = 'h3:has-text("zara coat 3")';
-    const bool = await page.locator(cartItemTitle).isVisible();
-    expect(bool).toBeTruthy();
-
-    await page.locator("text=Checkout").click();
-
+    //Checkout page
     //Add credit card details
     const creditCardNumber = "4542 9931 9292 2293";
     const creditCardLocator = page.locator("form .form__cc input[value='4542 9931 9292 2293']") ;
     await creditCardLocator.fill(creditCardNumber,{delay:100});
 
-      //Select Expiry Month
+    //Select Expiry Month
     const expiryMonth = page.locator('form .form__cc div .field.small select.input.ddl:nth-child(2)');
     await expiryMonth.click({delay:100});
     await expiryMonth.selectOption("07");

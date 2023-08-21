@@ -1,5 +1,4 @@
-class DashboardPage1
-{
+class DashboardPage1 {
     constructor(page)
     {
         this.products = page.locator(".card-body");
@@ -10,7 +9,7 @@ class DashboardPage1
     {
     const titles = await this.products.allTextContents();
     console.log(titles);
-    await page.waitForLoadState('networkidle');
+    //await page.waitForLoadState('networkidle');
 
     const count = await this.products.count();
     for(let i = 0; i < count; ++i)
