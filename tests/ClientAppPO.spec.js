@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 const {LoginPage} = require('../pageobjects/LoginPage');
-const {DashboardPage} = require('../pageobjects/DashboardPage1');
+const {DashboardPage, DashboardPage1} = require('../pageobjects/DashboardPage1');
 
 test('Login and view Adidas Orignal shoe', async ({page})=> 
 {
@@ -52,7 +52,7 @@ test.only("End to End testing", async ({page})=> {
     await submit1.click();*/
     await page.waitForLoadState('networkidle');
 
-    const dashboardPage = new DashboardPage(page);
+    const dashboardPage = new DashboardPage1(page);
     await dashboardPage.searchProductAddCart(productName);
     await dashboardPage.navigateToCart();
     //product page
