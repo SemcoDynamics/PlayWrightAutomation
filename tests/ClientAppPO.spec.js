@@ -48,9 +48,8 @@ test.only("End to End testing", async ({page})=> {
     const dashboardPage = new DashboardPage1(page);
     await dashboardPage.searchProductAddCart(productName);
     await dashboardPage.navigateToCart();
-    
-    const cartBtn = '[routerlink="/dashboard/cart"]'
-    await page.locator(cartBtn).click();
+
+    //
     await page.locator("div li").first().waitFor()
 
     const cartItemTitle = 'h3:has-text("zara coat 3")';
