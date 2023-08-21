@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 const {LoginPage} = require('../pageobjects/LoginPage');
-const {DashboardPage} = require('../pageobjects/DashboardPage');
+const {DashboardPage} = require('../pageobjects/DashboardPage1');
 
 test('Login and view Adidas Orignal shoe', async ({page})=> 
 {
