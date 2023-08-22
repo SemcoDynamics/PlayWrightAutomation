@@ -1,26 +1,21 @@
 const {test, expect} = require('@playwright/test');
 const {POManager} = require('../pageobjects/POManager');
-const {PaymentPage} = require('../pageobjects/PaymentPage')
+const {PaymentPage} = require('../pageobjects/PaymentPage');
+const dataSet = JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json")));
 
 test.only("End to End testing", async ({page})=> 
 {
     const poManager = new POManager(page);
-    //js file-login js, Dashboards
-    const productName = 'zara coat 3';
     //List all products in this locator
     const products = page.locator(".card-body");
-
-    //await page.goto("https://rahulshettyacademy.com/client/");
-    const email = 'semcodynamic@gmail.com';
-    const loginPass = 'P@ssword123!';
 
     //Sign in process
     const loginPage = poManager.getLoginPage();
     await loginPage.goTo();
-    await loginPage.validLogin(email, loginPass)
+    await loginPage.validLogin(dataSet.username, dataSet.password)
     //Dashboard search product and add it to cart
     const dashboardPage = poManager.getDashboardPage();
-    await dashboardPage.searchProductAddCart(productName);
+    await dashboardPage.searchProductAddCart(dataSet.productName);
     await dashboardPage.navigateToCart();
     //My Cart page
     const myCartCheckout = poManager.getMyCartPage();
