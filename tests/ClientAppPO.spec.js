@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 const {POManager} = require('../pageobjects/POManager');
-const {PaymentPage} = require('../pageobjects/PaymentPage');
+const {PaymentPage} = require('../pageobjects/PaymentPage').default;
 
 test.only("End to End testing", async ({page})=> 
 {
@@ -28,6 +28,7 @@ test.only("End to End testing", async ({page})=>
     await myCartCheckout.clickCheckout();
     //payment page
     const PaymentProcess = new PaymentPage();
+    await PaymentProcess.personalCardInfo();
     await PaymentProcess.personalCardExpiry();
     await PaymentProcess.countrySelection();
 

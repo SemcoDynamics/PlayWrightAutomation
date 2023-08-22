@@ -16,6 +16,7 @@ class MyCart {
     async clickCheckout()
     {
         await this.clickCheckoutBtn.click();
+        await this.page.waitForLoadState("networkidle");
     }
 }
 module.exports = {MyCart};
