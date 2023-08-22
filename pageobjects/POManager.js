@@ -2,6 +2,7 @@ const { DashboardPage1 } = require("./DashboardPage1");
 const { LoginPage } = require("./LoginPage");
 const { MyCart } = require("./MyCart");
 
+//We can use a Page Object Model to manager all of our Page objects in a sort of library manager.
 class POManager
 {
     constructor(page)

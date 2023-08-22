@@ -1,5 +1,6 @@
 const {test, expect} = require('@playwright/test');
 const {POManager} = require('../pageobjects/POManager');
+const {PaymentPage} = require('../pageobjects/PaymentPage');
 
 test.only("End to End testing", async ({page})=> 
 {
@@ -25,9 +26,12 @@ test.only("End to End testing", async ({page})=>
     const myCartCheckout = poManager.getMyCartPage();
     await myCartCheckout.waitForMyCart();
     await myCartCheckout.clickCheckout();
+    //payment page
+    const PaymentProcess = new PaymentPage();
+    await PaymentProcess.personalCardExpiry();
+    await PaymentProcess.countrySelection();
 
-
-    //Checkout page
+   /*  //payment page
     //Add credit card details
     const creditCardNumber = "4542 9931 9292 2293";
     const creditCardLocator = page.locator("form .form__cc input[value='4542 9931 9292 2293']") ;
@@ -50,10 +54,10 @@ test.only("End to End testing", async ({page})=>
     //Name on card
     await page.locator("form .row:nth-child(3) .field:nth-child(1) input").fill("Jack Black");
 
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('networkidle'); */
 
     //Checkout page
-    await page.locator('[placeholder*=Country]').type("South",{delay:100});
+   /*  await page.locator('[placeholder*=Country]').type("South",{delay:100});
 
     const dropdown1 = page.locator('.ta-results');
     await dropdown1.waitFor();
@@ -67,7 +71,7 @@ test.only("End to End testing", async ({page})=>
         await dropdown1.locator("button").nth(i).click();
         break
       }
-    }
+    } */
     //Apply Coupon
     await page.locator("form .row:nth-child(4) .field:nth-child(1) input").fill("rahulshettyacademy");
     await page.locator("form .row:nth-child(4) .field button").click();
