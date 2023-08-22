@@ -2,20 +2,20 @@
   "cookies": [
     {
       "name": "_ga",
-      "value": "GA1.2.791258052.1683573575",
+      "value": "GA1.2.907674628.1692718781",
       "domain": ".mixtelematics.com",
       "path": "/",
-      "expires": 1718133575.325275,
+      "expires": 1727278781.274724,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_gid",
-      "value": "GA1.2.1240053271.1683573575",
+      "value": "GA1.2.2118321156.1692718781",
       "domain": ".mixtelematics.com",
       "path": "/",
-      "expires": 1683659975,
+      "expires": 1692805181,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -25,7 +25,7 @@
       "value": "1",
       "domain": ".mixtelematics.com",
       "path": "/",
-      "expires": 1683573635,
+      "expires": 1692718841,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -35,30 +35,40 @@
       "value": "%7B%22lastUserLanguageCookie%22%3A%22en_gb%22%7D",
       "domain": "integration.mixtelematics.com",
       "path": "/",
-      "expires": 1715109577,
+      "expires": 1724254783,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
+      "name": "token",
+      "value": "33c44b66-3de5-4fab-8a3c-fa66a4ded44e",
+      "domain": "integration.mixtelematics.com",
+      "path": "/",
+      "expires": 1692722386.842463,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
       "name": "AWSALBCORS",
-      "value": "0Uz59GsyQkPidFW0v41yxoMDSapT7NAmXR2CzPPVmHICC6QJGIZPEyN18YtGNN6DAZ1TFD3GRUoqZovwWSOh4Z79I1/AN11I4jio5NppKvmrjVA00igyu/Lv01eX",
+      "value": "LyBe7ZnBOuaSkcYKtNRR7tyrUFitkiSdMx4Kuefqw04tv8AOxVau7JFng2f1fHnIfYAm83fl7ArgZ7guZgdKmpqf4o+r1VILDG6XwMv/vzhdxAFJP1M1TtN+piCy",
       "domain": "operationsapi.mixdevelopment.com",
       "path": "/",
-      "expires": 1684178377.521973,
+      "expires": 1693323584.597913,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
     },
     {
-      "name": "token",
-      "value": "bf05165a-ad28-44fb-ae8b-3e889ae788ff",
-      "domain": "integration.mixtelematics.com",
+      "name": "_ga_GQ2YD2JCKS",
+      "value": "GS1.2.1692718783.1.1.1692718784.0.0.0",
+      "domain": ".mixtelematics.com",
       "path": "/",
-      "expires": 1683577182.429253,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "Strict"
+      "expires": 1727278784.990479,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
     }
   ],
   "origins": [
@@ -66,12 +76,8 @@
       "origin": "https://integration.mixtelematics.com",
       "localStorage": [
         {
-          "name": "ZD-settings",
-          "value": "[[\"ab60a1df554cd261c61a67de389b334e274e5c64\",1683573578]]"
-        },
-        {
           "name": "ZD-suid",
-          "value": "{\"id\":\"68b7661daec5476085ea82f274804795\",\"expiry\":1683574478745,\"tabs\":{\"count\":1,\"expiry\":0}}"
+          "value": "{\"id\":\"8f91f1500f2f49bea725cd658d9b98a9\",\"expiry\":1692719686394,\"tabs\":{\"count\":1,\"expiry\":0}}"
         },
         {
           "name": "Timeline.TimelineSelectionCriteria.viewDate",
@@ -79,7 +85,7 @@
         },
         {
           "name": "ZD-buid",
-          "value": "bcf76390d19741608d13a9e195370a38"
+          "value": "c6fddf35d2ad4111ac1e22ab49844a4b"
         },
         {
           "name": "ZD-store",
@@ -87,7 +93,7 @@
         },
         {
           "name": "ZD-zE_oauth",
-          "value": "{\"id\":\"3aee40cc3f21d1ed342c04e22844f3afd3cb27ae\",\"token\":\"e1d927fd8a4bc39e4eb73cc2434b204338704bd3e84aa118b7268882fa785a06\",\"expiry\":1683580779,\"createdAt\":1683573579,\"webToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhbmRvbiBPbGNrZXJzIiwiZW1haWwiOiJicmFuZG9uLm9sY2tlcnNAbWl4dGVsZW1hdGljcy5jb20iLCJpYXQiOiIxNjgzNTczNTc4IiwianRpIjoiMTM5MjM2OTk2MzE0NTc4OTQ0MCIsImV4cCI6MTY4MzU4MDc3OH0.z0Y-um13JIdd_fqjfte5c_YVK9lLIuTHlb97q4SIY-Y\"}"
+          "value": "{\"id\":\"3aee40cc3f21d1ed342c04e22844f3afd3cb27ae\",\"token\":\"0f1df5fa1908b39102079e2714251b283696269bb2dd8b04cecac16447d3ea12\",\"expiry\":1692725987,\"createdAt\":1692718787,\"webToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhbmRvbiBPbGNrZXJzIiwiZW1haWwiOiJicmFuZG9uLm9sY2tlcnNAbWl4dGVsZW1hdGljcy5jb20iLCJpYXQiOiIxNjkyNzE4Nzg2IiwianRpIjoiMTQzMDcyNzc0NjIzMjAyOTE4NCIsImV4cCI6MTY5MjcyNTk4Nn0.fbKY7Xy0bOfhoxngoYL4NGClrRDfTmLaE5-SL5KTyVg\"}"
         }
       ]
     }

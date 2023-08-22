@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 const {POManager} = require('../pageobjects/POManager');
-const {PaymentPage} = require('../pageobjects/PaymentPage').default;
+const {PaymentPage} = require('../pageobjects/PaymentPage')
 
 test.only("End to End testing", async ({page})=> 
 {
@@ -27,59 +27,14 @@ test.only("End to End testing", async ({page})=>
     await myCartCheckout.waitForMyCart();
     await myCartCheckout.clickCheckout();
     //payment page
-    const PaymentProcess = new PaymentPage();
+    const PaymentProcess = new PaymentPage(page);
     await PaymentProcess.personalCardInfo();
     await PaymentProcess.personalCardExpiry();
     await PaymentProcess.countrySelection();
+    await PaymentProcess.couponApply();
+    await PaymentProcess.placeOrder();
 
-   /*  //payment page
-    //Add credit card details
-    const creditCardNumber = "4542 9931 9292 2293";
-    const creditCardLocator = page.locator("form .form__cc input[value='4542 9931 9292 2293']") ;
-    await creditCardLocator.fill(creditCardNumber,{delay:100});
-
-    //Select Expiry Month
-    const expiryMonth = page.locator('form .form__cc div .field.small select.input.ddl:nth-child(2)');
-    await expiryMonth.click({delay:100});
-    await expiryMonth.selectOption("07");
-      
-    //Select Expiry day
-    const expiryDay =  page.locator('form .form__cc div .field.small select.input.ddl:nth-child(3)')
-    await expiryDay.click({delay:100});
-    await expiryDay.selectOption("28");
-
-    //CVV Code
-    const cVV = page.locator("form .row:nth-child(2) .field.small:nth-child(2) input");
-    await cVV.fill("654");
-
-    //Name on card
-    await page.locator("form .row:nth-child(3) .field:nth-child(1) input").fill("Jack Black");
-
-    await page.waitForLoadState('networkidle'); */
-
-    //Checkout page
-   /*  await page.locator('[placeholder*=Country]').type("South",{delay:100});
-
-    const dropdown1 = page.locator('.ta-results');
-    await dropdown1.waitFor();
-    const optionsCount = await dropdown1.locator("button").count();
-    for(let i = 0; i < optionsCount; ++i)
-    {
-      const text = await dropdown1.locator("button").nth(i).textContent();
-      if(text.trim() === "South Africa")
-      {
-        //click operation
-        await dropdown1.locator("button").nth(i).click();
-        break
-      }
-    } */
-    //Apply Coupon
-    await page.locator("form .row:nth-child(4) .field:nth-child(1) input").fill("rahulshettyacademy");
-    await page.locator("form .row:nth-child(4) .field button").click();
-    
-    //Place Order
-    await page.locator(".actions a.btnn").click();
-
+    //left to be refactored
     //Thank message
     expect(await page.locator("tbody h1.hero-primary").textContent())
     console.log("Correct message displays: ", await page.locator("tbody h1.hero-primary").textContent());
