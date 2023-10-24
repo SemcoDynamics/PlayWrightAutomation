@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Oct 10 16:29:53 SAST 2023","Tue Oct 10 16:29:58 SAST 2023","5072","","SwagLab2.spec.js","Invalid user access","","","standard user",""
+"passed","Tue Oct 10 16:29:58 SAST 2023","Tue Oct 10 16:30:00 SAST 2023","1627","","SwagLab2.spec.js","Invalid user access","","","Locked out user",""
+"passed","Tue Oct 10 16:30:00 SAST 2023","Tue Oct 10 16:30:02 SAST 2023","1854","","SwagLab2.spec.js","Invalid user access","","","Problem user",""
+"failed","Tue Oct 10 16:30:02 SAST 2023","Tue Oct 10 16:30:07 SAST 2023","5418","","SwagLab2.spec.js","Invalid user access","","","performance_glitch_user",""

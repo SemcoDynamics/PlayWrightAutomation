@@ -3,11 +3,11 @@ const {test, expect} = require('@playwright/test');
 test('Navigate to the Regression lab asset page', async ({page})=> 
 {
     trace: 'path/to/trace/file.json' // enable tracing and specify output file
-
+    //Login Variables
 	const userNameMix = page.locator('[dmx-validate="userName"]');
     const passWordMix = page.locator('[dmx-validate="password"]');
     const submit = page.locator('button[text="Sign In"]');
-
+    //Open Browser
     await page.goto("https://integration.mixtelematics.com/#/login");
     //get title - assertion
     console.log("Page Title =",await page.title());
