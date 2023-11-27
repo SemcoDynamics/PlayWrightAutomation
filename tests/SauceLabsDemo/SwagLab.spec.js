@@ -1,7 +1,6 @@
 const {test, expect} = require('@playwright/test');
-const {SwagLogin} = require('../pageobjects/SwagLogin');
+const {SwagLogin} = require('../../pageobjects/SwagLabs/Logins/SwagLogin_standardUser');
 
-const { all } = require('express/lib/application');
 let webContext;
 
 test.beforeAll(async ({browser}) =>
@@ -14,9 +13,9 @@ test.beforeAll(async ({browser}) =>
     //Going to Sauce demo URL
     await page.goto("https://www.saucedemo.com/");
     //Entering username
-    await page.locator('[data-test="username"]').type(username);
+    await page.locator('[data-test="username"]').fill(username);
     //Entering passowrd
-    await page.locator('[data-test="password"]').type(password);
+    await page.locator('[data-test="password"]').fill(password);
     //Clicking button
     await page.locator('[data-test="login-button"]').click();
     //loadstate
@@ -146,5 +145,6 @@ test.describe("1.Complete a purchase flow", async () => {
         await expect(swagLogo).toHaveText('Swag Labs');
         //Close browser once test is completed
         await webContext.close();
+        await page.close()
     });
 });
